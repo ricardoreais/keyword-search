@@ -1,0 +1,33 @@
+<div>
+  Search:
+  <input type="text" [(ngModel)]="filter" (keyup)="updateFilter()">
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col" class="cool-column">Cool column</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredData$ | async as entries; else loading">
+      <tr *ngFor="let entry of entries | paginate: { itemsPerPage: pageSize, currentPage: page }">
+        <!-- This highlight pipe affects performance a bit, but it looks super cool -->
+        <th scope="row" [innerHTML]="entry.name  |  highlight : filter"></th>
+        <td [innerHTML]="entry.description  |  highlight : filter"></td>
+        <td [innerHTML]="entry.status  |  highlight : filter"></td>
+      </tr>
+      <tr *ngIf="!entries.length">
+        <td>
+          No results! Try searching some other words :)
+        </td>
+      </tr>
+    </tbody>
+    <ng-template #loading>
+        Loading Entries...
+    </ng-template>
+  </table>
+
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
