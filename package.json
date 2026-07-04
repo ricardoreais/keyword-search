@@ -53,7 +53,6 @@
     "brace-expansion": "1.1.13",
     "loader-utils": "1.4.2",
     "json5": "2.2.3",
-    "minimatch": "3.0.8",
     "http-cache-semantics": "4.1.1",
     "braces": "3.0.3",
     "cross-spawn": "6.0.6",
