@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as randomWords from 'random-words';
+import { generate as randomWords } from 'random-words';
 import { IEntry } from '../../common/models/IEntry';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,7 @@ export class EntryService {
   entries$: BehaviorSubject<IEntry[]>;
 
   constructor() {
-    this.entries$ = new BehaviorSubject([]);
+    this.entries$ = new BehaviorSubject<IEntry[]>([]);
   }
 
   getEntries(entriesCount: number) {

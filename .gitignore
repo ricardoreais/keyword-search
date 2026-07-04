@@ -1,43 +1,38 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
-/dist
-/tmp
-/out-tsc
-
-# dependencies
-/node_modules
-
-# profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
-
-# IDEs and editors
-/.idea
-.project
-.classpath
+.angular
 .c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
+chrome-profiler-events.json
+.classpath
+# compiled output
 /connect.lock
 /coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# dependencies
+/dist
 .DS_Store
+/.idea
+# IDEs and editors
+# IDE - VSCode
+*.launch
+/libpeerconnection.log
+# misc
+/node_modules
+npm-debug.log
+/out-tsc
+# profiling files
+.project
+/.sass-cache
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.settings/
+speed-measure-plugin.json
+*.sublime-workspace
+# System Files
+testem.log
 Thumbs.db
+/tmp
+/typings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+yarn-error.log

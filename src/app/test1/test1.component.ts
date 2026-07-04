@@ -5,17 +5,18 @@ import { EntryService } from './services/entry.service';
 
 
 @Component({
+  standalone: false,
   selector: 'app-test1',
   templateUrl: './test1.component.html',
   styleUrls: ['./test1.component.css']
 })
 export class Test1Component implements OnInit {
-  filter: string;
-  filteredData$: Observable<IEntry[]>;
+  filter!: string;
+  filteredData$: Observable<IEntry[]> | undefined;
   entriesCount = 50000;
   page = 1;
   pageSize = 20;
-  timeoutHandle: number;
+  timeoutHandle!: number;
 
   constructor(private entryService: EntryService) {
   }
