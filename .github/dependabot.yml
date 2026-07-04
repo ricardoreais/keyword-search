@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # These packages are pinned via npm overrides to safe/resolved versions.
+      # Letting Dependabot try to update them leads to unresolvable conflicts
+      # with parent package constraints (e.g. @angular/cli, @angular-devkit/build-angular).
+      - "postcss"
+      - "@babel/runtime"
+      - "@babel/helpers"
+      - "@babel/core"
+      - "brace-expansion"
+      - "loader-utils"
+      - "json5"
+      - "http-cache-semantics"
+      - "braces"
+      - "cross-spawn"
+      - "ini"
+      - "micromatch"
+      - "node-forge"
+      - "trim-newlines"
+      - "http-proxy-middleware"
+      - "js-yaml"
+      - "ws"
+      - "tar"
+      - "handlebars"
+      - "debug"
+      - "ua-parser-js"
+      - "webpack-dev-server"
+      - "uuid"
+      - "form-data"
+      - "sigstore"
+      - "@sigstore/core"
+      - "vite"
+      - "launch-editor"
+      - "tmp"
+      - "protobufjs"
+      - "esbuild"
