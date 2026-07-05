@@ -1,6 +1,6 @@
 <div>
   Search:
-  <input type="text" [(ngModel)]="filter" (keyup)="updateFilter()">
+  <input type="text" (input)="onInput($event)">
 </div>
 
 <table class="table">
