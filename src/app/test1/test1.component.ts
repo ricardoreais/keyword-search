@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AsyncPipe, NgIf, NgFor } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { IEntry } from '../common/models/IEntry';
@@ -11,18 +11,17 @@ import { HighlightSearchPipe } from '../common/pipes/highlight-search-pipe';
   standalone: true,
   selector: 'app-test1',
   templateUrl: './test1.component.html',
-  imports: [AsyncPipe, NgIf, NgFor, FormsModule, NgxPaginationModule, HighlightSearchPipe]
+  imports: [AsyncPipe, FormsModule, NgxPaginationModule, HighlightSearchPipe]
 })
 export class Test1Component implements OnInit {
+  private entryService = inject(EntryService);
+
   filter!: string;
   filteredData$: Observable<IEntry[]> | undefined;
   entriesCount = 50000;
   page = 1;
   pageSize = 20;
   timeoutHandle!: number;
-
-  constructor(private entryService: EntryService) {
-  }
 
   ngOnInit() {
     this.entryService.getEntries(this.entriesCount);
