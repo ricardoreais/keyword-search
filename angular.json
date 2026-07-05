@@ -52,7 +52,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "options": {
             "buildTarget": "ng-code-test:build"
           },
@@ -98,6 +98,7 @@
           }
         }
       }
-    },
+    }
+  },
   "defaultProject": "ng-code-test"
 }
